@@ -9,7 +9,15 @@ header {
     justify-content: center;
     align-content: center;
 }
-
+.donatetextwall{
+    position:relative;
+    top:200px;
+}
+.donatestuff{
+    position:relative;
+    text-align: center;
+    top:150px;
+}
 .headerArea {
     background-color: rgb(0, 38, 255, 0.5);
     border-radius: 20px;

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>DIT</title>
+    <link rel="stylesheet" href="../Styles/stylesheet.css" />
+</head>
+<body>
+    <header>
+        <div class="headerArea">
+            <a class="button" href="../Pages/timeline.html">timeline</a>
+            <a class="button" href="../Pages/state.html">state of the internet</a>
+            <a class="button" href="../Pages/news.html">recent news</a>
+            <a class="button" href="../Pages/donate.html">donate</a>
+        </div>
+    </header>
+    <a href="../Pages/index.html"><img src="../Images/logo.png" class="logo" /></a>
+    <div class="donatestuff">
+    <p id="donationcounter">text here</p>
+    <script>
+        let counter = document.getElementById("donationcounter")
+        let goal = Math.random()
+        goal*=10000000
+        let current = goal*Math.random()
+        counter.textContent = (`$${Math.round(current)} rasied of $${Math.round(goal)} goal`)
+    </script>
+    <button onclick="current+=1;counter.textContent = (`$${Math.round(current)} raised of $${Math.round(goal)} goal`)">donate $1</button><button onclick="current+=10;counter.textContent = (`$${Math.round(current)} raised of $${Math.round(goal)} goal`)">donate $10</button><button onclick="current+=100;counter.textContent = (`$${Math.round(current)} raised of $${Math.round(goal)} goal`)">donate $100</button><button onclick="current+=1000;counter.textContent = (`$${Math.round(current)} raised of $${Math.round(goal)} goal`)">donate $1000</button><button onclick="current+=10000;counter.textContent = (`$${Math.round(current)} raised of $${Math.round(goal)} goal`)">donate $10000</button>
+    </div>
+    <div class="donatetextwall">
+    <h1 style="text-align: center;">We need YOUR support</h1>
+    <p>With a small donation of your life savings you can help to rid the internet of ai slop. We will use your money to buy rats from the rat supplier, a genuine local bussinessman. These rats will be set to work in a slave labour camp 100% ethically to produce REAL content for the internet</p>
+    <p>the rat supplier↓↓↓↓↓</p>
+    <img src="../Images/RatSupplier.png" width="200px">
+    </div>
+</body>
+</html>
