@@ -1,0 +1,35 @@
+html{
+    padding: 0;
+}
+
+header {
+    position: fixed;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.headerArea {
+    background-color: rgb(0, 38, 255, 0.5);
+    border-radius: 20px;
+    text-align: center;
+    padding: 8px;
+    display: flex;
+}
+
+.button {
+    background-color: green;
+    padding: 12px;
+    display: block;
+    color: white;
+    border-radius: 16px;
+    text-decoration: none;
+}
+
+.logo {
+    position: fixed;
+    width:100px;
+    left:50%;
+    transform: translate(-50%, 100%);
+}
