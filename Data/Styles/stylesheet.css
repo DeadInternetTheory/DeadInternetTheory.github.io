@@ -33,7 +33,6 @@ html {
         opacity: 1;
     }
 }
-/*make links use our colours instead of default*/
 a{
     color:var(--accent)
 }
@@ -95,7 +94,6 @@ header {
     }
 
 .logo {
-    z-index: -1;
     position:sticky;
     top:-30%;
     width:100px;
