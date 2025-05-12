@@ -1,0 +1,42 @@
+/*home page*/
+.homepagetext{
+    position: relative;
+    top:100px;
+    /*WTAF IS THIS SOMEONE FIX THIS GARBAGE*/
+    h1{
+        text-align: center;
+    }
+}
+
+/*Donate Stuff*/
+/*TODO: FIX THIS CANCER - NEVER EEVVVVER USE TOP WITH RELATIVE, LITERALLY DESTROYS DOCUMENT STACKING*/
+.donatetextwall {
+    position: relative;
+    top: 200px;
+}
+.donatestuff {
+    position: relative;
+    text-align: center;
+    top: 150px;
+}
+
+/*news page*/
+/*todo: make article titles fill all available space*/
+/*TODO: turn these specific styles into base styles*/
+.article {
+    width: 100%;
+    background-color: var(--light);
+    border-radius: 20px;
+    display: flex;
+}
+.article p{
+    position:sticky;
+    left:16%;
+    text-align:justify;
+    text-justify:inter-word;
+    margin-right:10%;
+}
+.article hr{
+    position:sticky;
+    left:15%;
+}
