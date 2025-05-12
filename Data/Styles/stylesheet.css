@@ -33,7 +33,9 @@ html {
         opacity: 1;
     }
 }
-
+a{
+    color:var(--accent)
+}
 header {
     position: fixed;
     width: 100vw;
@@ -67,7 +69,14 @@ header {
             border-radius: 0px 26px 26px 0px;
             border-color: transparent transparent transparent white;
         }
-
+/*home page*/
+.homepagetext{
+    position: relative;
+    top:100px;
+    h1{
+        text-align: center;
+    }
+}
 /*General Use*/
 .button {
     background-color: var(--light);
@@ -92,7 +101,8 @@ header {
     }
 
 .logo {
-    position: fixed;
+    position:sticky;
+    top:-30%;
     width:100px;
     left:50%;
     transform: translate(-50%, 100%);
@@ -110,18 +120,21 @@ header {
 }
 
 /*news page*/
+/*todo: make article titles fill all available space*/
 .article {
-    color:white;
     width: 100%;
     background-color: var(--light);
     border-radius: 20px;
     display: flex;
 }
-.article h1{
-    text-align:center;
-}
 .article p{
-    margin-left:1%;
+    position:sticky;
+    left:16%;
     text-align:justify;
     text-justify:inter-word;
+    margin-right:10%;
+}
+.article hr{
+    position:sticky;
+    left:15%;
 }
