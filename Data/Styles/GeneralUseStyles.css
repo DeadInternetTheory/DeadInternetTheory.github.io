@@ -1,13 +1,14 @@
 .headerArea {
     background-color: var(--blur);
     backdrop-filter: blur(15px);
-    border-radius: 30px;
+    border-radius: 50px;
     box-shadow: inset 0px 0px 4px 0px var(--blur), 0px 0px 16px 0px var(--black);
     text-align: center;
     margin: 8px;
     padding: 8px;
     display: flex;
     align-items: center;
+    z-index:5;
 }
 .headerButtons {
     display: inline-flex;

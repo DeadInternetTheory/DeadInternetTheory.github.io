@@ -1,32 +1,78 @@
-/*Donate Stuff*/
-/*TODO: FIX THIS CANCER - NEVER EEVVVVER USE TOP WITH RELATIVE, LITERALLY DESTROYS DOCUMENT STACKING*/
-.donatetextwall {
-    position: relative;
-    top: 200px;
+/*Main website logo*/
+.mainLogo {
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 100px;
+    height: 100px;
+    position: fixed;
+    transform: translate(-50%, 0%);
+    animation: mainLogoAnim 1ms linear forwards;
+    animation-timeline: scroll();
+    animation-range: 50vh 100vh;
+    opacity: 1;
 }
-.donatestuff {
-    position: relative;
-    text-align: center;
-    top: 150px;
+@keyframes mainLogoAnim {
+    to {
+        opacity: 0;
+        height: 50px;
+    }
+}
+.mainLogoHeader {
+    position: absolute;
+    height: 50px;
+    padding: 0px;
+    margin-left: 20px;
+    transform: translate(0%, -50%);
+    animation: mainLogoHeadAnim 1ms linear forwards;
+    animation-timeline: scroll();
+    animation-range: 50vh 100vh;
+    opacity: 0;
+    z-index: -1;
+}
+@keyframes mainLogoHeadAnim {
+    to {
+        margin-left: -53px;
+        opacity: 1;
+    }
+}
+.mainHeaderExpansion {
+    animation: headerExpansionAnim 1ms linear forwards;
+    animation-timeline: scroll();
+    animation-range: 50vh 100vh;
+}
+@keyframes headerExpansionAnim{
+    to {
+        padding-left: 60px;
+    }
 }
 
-/*news page*/
-/*todo: make article titles fill all available space*/
-/*TODO: turn these specific styles into base styles*/
-.article {
-    width: 100%;
-    background-color: var(--light);
-    border-radius: 20px;
+/*Donate Stuff*/
+.donatetextwall {
+    margin-top: 200px;
+}
+.donatestuff {
+    text-align: center;
+    margin-top: 150px;
+}
+
+/*Timeline*/
+.TimelineWrapper{
+    height: 120px;
+    border: 1px solid #ddd;
     display: flex;
+    margin-top: 45vh;
+    overflow-x: auto;
 }
-.article p{
-    position:sticky;
-    left:16%;
-    text-align:justify;
-    text-justify:inter-word;
-    margin-right:10%;
+
+/*Based*/
+.wrapper::-webkit-scrollbar{
+   width: 0; 
 }
-.article hr{
-    position:sticky;
-    left:15%;
+
+.TimelineItem{
+    color: black;
+    min-width: 110px;
+    width: 20%;
+    height: 110px;
+    text-align: center;
+    background-color: white;
 }

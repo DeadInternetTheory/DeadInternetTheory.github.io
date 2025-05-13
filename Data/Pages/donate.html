@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../Styles/SpecificStyles.css" />
 </head>
 <body>
+    <div id="top"></div>
     <header>
         <div class="headerArea">
             <a href="../../index.html"><img src="../Images/logo.png" class="logo" /></a>
@@ -19,27 +20,32 @@
             </div>
         </div>
     </header>
-    
+
     <div class="donatestuff">
         <p id="donationcounter">text here</p>
 
         <script>
             let counter = document.getElementById("donationcounter")
             let goal = Math.random()
-            goal*=10000000
-            let current = goal*Math.random()
+            goal *= 10000000
+            let current = goal * Math.random()
             counter.textContent = (`$${Math.round(current)} rasied of $${Math.round(goal)} goal`)
         </script>
 
         <!--Someone fix this shit code-->
->
-        <button onclick="current+=1;counter.textContent = (`$${Math.round(current)} raised of $${Math.round(goal)} goal`)">donate $1</button><button onclick="current+=10;counter.textContent = (`$${Math.round(current)} raised of $${Math.round(goal)} goal`)">donate $10</button><button onclick="current+=100;counter.textContent = (`$${Math.round(current)} raised of $${Math.round(goal)} goal`)">donate $100</button><button onclick="current+=1000;counter.textContent = (`$${Math.round(current)} raised of $${Math.round(goal)} goal`)">donate $1000</button><button onclick="current+=10000;counter.textContent = (`$${Math.round(current)} raised of $${Math.round(goal)} goal`)">donate $10000</button>
+
+        <button onclick="current+=1;counter.textContent = (`$${Math.round(current)} raised of $${Math.round(goal)} goal`)">donate $1</button>
+        <button onclick="current+=10;counter.textContent = (`$${Math.round(current)} raised of $${Math.round(goal)} goal`)">donate $10</button>
+        <button onclick="current+=100;counter.textContent = (`$${Math.round(current)} raised of $${Math.round(goal)} goal`)">donate $100</button>
+        <button onclick="current+=1000;counter.textContent = (`$${Math.round(current)} raised of $${Math.round(goal)} goal`)">donate $1000</button>
+        <button onclick="current+=10000;counter.textContent = (`$${Math.round(current)} raised of $${Math.round(goal)} goal`)">donate $10000</button>
     </div>
+
     <div class="donatetextwall">
-        <h1 style="width">We need YOUR support</h1>
+        <h1>We need YOUR support</h1>
         <p>With a small donation of your life savings you can help to rid the internet of ai slop. We will use your money to buy rats from the rat supplier, a genuine local bussinessman. These rats will be set to work in a slave labour camp 100% ethically to produce REAL content for the internet</p>
         <p>the rat supplier↓↓↓↓↓</p>
-        <img src="../Images/RatSupplier.png" width="40%">
+        <img src="../Images/RatSupplier.png" style="width:40%">
     </div>
 </body>
 </html>
