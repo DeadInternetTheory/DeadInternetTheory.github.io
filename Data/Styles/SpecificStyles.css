@@ -1,13 +1,3 @@
-/*home page*/
-.homepagetext{
-    position: relative;
-    top:100px;
-    /*WTAF IS THIS SOMEONE FIX THIS GARBAGE*/
-    h1{
-        text-align: center;
-    }
-}
-
 /*Donate Stuff*/
 /*TODO: FIX THIS CANCER - NEVER EEVVVVER USE TOP WITH RELATIVE, LITERALLY DESTROYS DOCUMENT STACKING*/
 .donatetextwall {
