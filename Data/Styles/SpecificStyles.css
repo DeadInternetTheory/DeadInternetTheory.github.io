@@ -59,11 +59,10 @@
     height: 120px;
     border: 1px solid #ddd;
     display: flex;
-    margin-top: 45vh;
+    top: 45vh;
     overflow-x: auto;
 }
 
-/*Based*/
 .wrapper::-webkit-scrollbar{
    width: 0; 
 }

@@ -46,11 +46,26 @@ body {
     }
 }
 
-/*TODO: make hovered links animate an underline*/
 a {
     color: var(--accent);
     text-decoration: none;
 }
+/*Positioning doesn't work at all but still looks look :thumbs-up:*/
+    a::before {
+        content: "";
+        position: absolute;
+        display: block;
+        width: 100%;
+        height: 2px;
+        bottom: 0;
+        left: 0;
+        background-color: rgb(255 250 255);
+        transform: scaleX(0);
+        transition: transform 0.3s ease;
+    }
+    a:hover::before {
+        transform: scaleX(1);
+    }
 
 header {
     position: fixed;
@@ -61,20 +76,26 @@ header {
     align-items: center;
 }
 
-.article {
+/*A section is used to cover the whole screen*/
+section{
+    height: 100vh;
+    width: 100vw;
+}
+
+article {
     width: 100%;
     background-color: var(--light);
     border-radius: 20px;
     display: flex;
 }
-    .article p {
+    article p {
         position: sticky;
         left: 16%;
         text-align: justify;
         text-justify: inter-word;
         margin-right: 10%;
     }
-    .article hr {
+    article hr {
         position: sticky;
         left: 15%;
     }
