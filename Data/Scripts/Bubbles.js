@@ -1,15 +1,31 @@
-const NUM_NODES = 40;
-const MAX_DISTANCE = 150;
+const NUM_NODES = 30;
+const MAX_DISTANCE = 200;
 const NODE_SIZE = 50;
 
 const canvas = document.getElementById('lineCanvas');
 const ctx = canvas.getContext('2d');
-
 const nodes = [];
 
-// Node Factory
-function createNode() {
+const imageList = [
+    'Data/Images/BubbleIcons/bluesky.png',
+    'Data/Images/BubbleIcons/facebook.png',
+    'Data/Images/BubbleIcons/github.png',
+    'Data/Images/BubbleIcons/hub.png',
+    'Data/Images/BubbleIcons/instagram.png',
+    'Data/Images/BubbleIcons/reddit.png',
+    'Data/Images/BubbleIcons/snapchat.png',
+    'Data/Images/BubbleIcons/tiktok.png',
+    'Data/Images/BubbleIcons/twitch.png',
+    'Data/Images/BubbleIcons/twitter.png',
+    'Data/Images/BubbleIcons/wechat.png',
+    'Data/Images/BubbleIcons/youtube.png',
+];
+
+function createNode(index) {
     const div = document.createElement('div');
+    if (index < imageList.length) {
+        div.style.backgroundImage = `url('${imageList[index]}')`;
+    }
     div.className = 'bubble';
 
     const x = Math.random() * (window.innerWidth - NODE_SIZE);
@@ -80,7 +96,7 @@ window.onload = () => {
 
     // Initialize nodes
     for (let i = 0; i < NUM_NODES; i++) {
-        nodes.push(createNode());
+        nodes.push(createNode(i));
     }
 
     animate();
