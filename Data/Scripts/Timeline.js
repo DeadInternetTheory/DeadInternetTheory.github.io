@@ -1,4 +1,4 @@
-const track = document.getElementById("image-track");
+const track = document.getElementById("TimelineItem-track");
 
 const handleOnDown = e => track.dataset.mouseDownAt = e.clientX;
 
@@ -23,7 +23,7 @@ const handleOnMove = e => {
         transform: `translate(${nextPercentage}%, -50%)`
     }, { duration: 1200, fill: "forwards" });
 
-    for (const image of track.getElementsByClassName("image")) {
+    for (const image of track.getElementsByClassName("TimelineItem")) {
         image.animate({
             objectPosition: `${100 + nextPercentage}% center`
         }, { duration: 1200, fill: "forwards" });

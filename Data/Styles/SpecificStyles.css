@@ -55,28 +55,15 @@
 }
 
 /*Timeline*/
-.TimelineWrapper{
-    height: 120px;
-    border: 1px solid #ddd;
-    display: flex;
-    top: 45vh;
-    overflow-x: auto;
-}
-
-.wrapper::-webkit-scrollbar{
-   width: 0; 
-}
-
-.TimelineItem{
-    color: black;
-    min-width: 110px;
-    width: 20%;
-    height: 110px;
-    text-align: center;
+.TimelineBody {
+    height: 100vh;
+    width: 100vw;
     background-color: white;
+    margin: 0rem;
+    overflow: hidden;
 }
 
-#image-track {
+#TimelineItem-track {
     display: flex;
     gap: 4vmin;
     position: absolute;
@@ -84,19 +71,28 @@
     top: 50%;
     transform: translate(0%, -50%);
     user-select: none; /* -- Prevent image highlighting -- */
+    background-color: aqua;
 }
-    #image-track::before {
+    #TimelineItem-track::before {
         position: absolute;
         content: '';
         background-color: white;
+<<<<<<< Updated upstream
         height: 10px;
         width: 100%;
         top: 50%;
+=======
+        height: 20px;
+        width: 100vh;
+        top: 50%;   
+>>>>>>> Stashed changes
         transform: translate(0%, -50%);
+        background-color: orange;
     }
-    #image-track > .image {
+    #TimelineItem-track > .TimelineItem {
         width: 40vmin;
         height: 56vmin;
         object-fit: cover;
         object-position: 100% center;
+        background-color: deeppink;
     }
