@@ -1,10 +1,15 @@
-const NUM_NODES = 30;
+const NUM_NODES = 40;
+const NUM_NODES_BACK = 50;
 const MAX_DISTANCE = 200;
 const NODE_SIZE = 50;
 
 const canvas = document.getElementById('lineCanvas');
 const ctx = canvas.getContext('2d');
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
 const nodes = [];
+const nodesBack = [];
 
 const imageList = [
     'Data/Images/BubbleIcons/bluesky.png',
@@ -21,48 +26,58 @@ const imageList = [
     'Data/Images/BubbleIcons/youtube.png',
 ];
 
-function createNode(index) {
+function createNodeElement(className, size, image = '') {
     const div = document.createElement('div');
-    if (index < imageList.length) {
-        div.style.backgroundImage = `url('${imageList[index]}')`;
-    }
-    div.className = 'bubble';
+    div.className = className;
 
-    const x = Math.random() * (window.innerWidth - NODE_SIZE);
-    const y = Math.random() * (window.innerHeight - NODE_SIZE);
-    const vx = (Math.random() - 0.5) * 1.5;
-    const vy = (Math.random() - 0.5) * 1.5;
+    if (image) div.style.backgroundImage = `url('${image}')`;
+
+    div.style.width = `${size}px`;
+    div.style.height = `${size}px`;
+    div.style.opacity = className === 'bubbleBack' ? size / 30 : 1;
 
     document.body.appendChild(div);
+    return div;
+}
+
+function createNodeData(speedFactor = 1.5, image = '', isBackground = false) {
+    const size = isBackground ? (Math.random() * 20 + 10) : NODE_SIZE;
+    const x = Math.random() * (window.innerWidth - size);
+    const y = Math.random() * (window.innerHeight - size);
+    const vx = (Math.random() - 0.5) * speedFactor;
+    const vy = (Math.random() - 0.5) * speedFactor;
+    const className = isBackground ? 'bubbleBack' : 'bubble';
 
     return {
-        x, y,
-        vx, vy,
-        el: div,
+        x, y, vx, vy,
+        size,
+        el: createNodeElement(className, size, image)
     };
 }
 
+function updateNode(node) {
+    if (node.x <= 0 || node.x >= window.innerWidth - node.size) node.vx *= -1;
+    if (node.y <= 0 || node.y >= window.innerHeight - node.size) node.vy *= -1;
+
+    node.x += node.vx;
+    node.y += node.vy;
+
+    node.el.style.transform = `translate(${node.x}px, ${node.y}px)`;
+}
+
 function updateNodes() {
-    for (const node of nodes) {
-        // Bounce off edges
-        if (node.x <= 0 || node.x >= window.innerWidth - NODE_SIZE) node.vx *= -1;
-        if (node.y <= 0 || node.y >= window.innerHeight - NODE_SIZE) node.vy *= -1;
-
-        node.x += node.vx;
-        node.y += node.vy;
-
-        // Use transform instead of top/left for better performance
-        node.el.style.transform = `translate(${node.x}px, ${node.y}px)`;
-    }
+    [...nodes, ...nodesBack].forEach(updateNode);
 }
 
 function drawConnections() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
     for (let i = 0; i < nodes.length; i++) {
+        const nodeA = nodes[i];
         for (let j = i + 1; j < nodes.length; j++) {
-            const dx = nodes[i].x - nodes[j].x;
-            const dy = nodes[i].y - nodes[j].y;
+            const nodeB = nodes[j];
+            const dx = nodeA.x - nodeB.x;
+            const dy = nodeA.y - nodeB.y;
             const distSq = dx * dx + dy * dy;
 
             if (distSq < MAX_DISTANCE * MAX_DISTANCE) {
@@ -70,8 +85,8 @@ function drawConnections() {
                 ctx.beginPath();
                 ctx.lineWidth = factor * 4;
                 ctx.lineCap = "round";
-                ctx.moveTo(nodes[i].x + NODE_SIZE / 2, nodes[i].y + NODE_SIZE / 2);
-                ctx.lineTo(nodes[j].x + NODE_SIZE / 2, nodes[j].y + NODE_SIZE / 2);
+                ctx.moveTo(nodeA.x + NODE_SIZE / 2, nodeA.y + NODE_SIZE / 2);
+                ctx.lineTo(nodeB.x + NODE_SIZE / 2, nodeB.y + NODE_SIZE / 2);
                 ctx.strokeStyle = `rgba(255,255,255,${factor})`;
                 ctx.stroke();
             }
@@ -91,12 +106,11 @@ window.addEventListener('resize', () => {
 });
 
 window.onload = () => {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-
-    // Initialize nodes
+    for (let i = 0; i < NUM_NODES_BACK; i++) {
+        nodesBack.push(createNodeData(0.75, '', true));
+    }
     for (let i = 0; i < NUM_NODES; i++) {
-        nodes.push(createNode(i));
+        nodes.push(createNodeData(1.5, imageList[i] || ''));
     }
 
     animate();
