@@ -1,5 +1,5 @@
-const NUM_NODES = 40;
-const NUM_NODES_BACK = 50;
+const NUM_NODES = 30;
+const NUM_NODES_BACK = 30;
 const MAX_DISTANCE = 200;
 const NODE_SIZE = 50;
 
@@ -34,7 +34,7 @@ function createNodeElement(className, size, image = '') {
 
     div.style.width = `${size}px`;
     div.style.height = `${size}px`;
-    div.style.opacity = className === 'bubbleBack' ? size / 30 : 1;
+    div.style.opacity = className === 'bubbleBack' ? size / 50 : 1;
 
     document.body.appendChild(div);
     return div;
@@ -67,6 +67,7 @@ function updateNode(node) {
 
 function updateNodes() {
     [...nodes, ...nodesBack].forEach(updateNode);
+    drawConnections(); 
 }
 
 function drawConnections() {
@@ -96,7 +97,6 @@ function drawConnections() {
 
 function animate() {
     updateNodes();
-    drawConnections();
     requestAnimationFrame(animate);
 }
 

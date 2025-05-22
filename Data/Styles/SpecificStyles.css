@@ -45,6 +45,13 @@
     }
 }
 
+/*Index parallax*/
+.graveyardArt{
+    z-index: -1;
+    position:absolute;
+    bottom:0px;
+}
+
 /*Donate Stuff*/
 .donatetextwall {
     margin-top: 200px;
