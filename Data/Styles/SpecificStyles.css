@@ -69,37 +69,45 @@
     margin: 0rem;
     overflow: hidden;
 }
-
-#TimelineItem-track {
+.TimelineItem-track {
     display: flex;
-    gap: 4vmin;
+    gap: 200vmin;
     position: absolute;
     left: 10%;
     top: 50%;
     transform: translate(0%, -50%);
     user-select: none; /* -- Prevent image highlighting -- */
-    background-color: aqua;
 }
-    #TimelineItem-track::before {
+    .TimelineItem-track::before {
         position: absolute;
         content: '';
         background-color: white;
-<<<<<<< Updated upstream
-        height: 10px;
-        width: 100%;
         top: 50%;
-=======
         height: 20px;
-        width: 100vh;
+        width: 87.625%;
         top: 50%;   
->>>>>>> Stashed changes
         transform: translate(0%, -50%);
-        background-color: orange;
     }
-    #TimelineItem-track > .TimelineItem {
-        width: 40vmin;
-        height: 56vmin;
+    .TimelineItem-track > .TimelineItem {
+        width: 2vmin;
+        height: 30vmin;
         object-fit: cover;
         object-position: 100% center;
-        background-color: deeppink;
+        border: none;
+        background-color: white;
     }
+    .TimelineItem:nth-child(odd) {
+        transform: translate(0%, -50%);
+    }
+    .TimelineItem:nth-child(even) {
+        transform: translate(0%, 50%);
+    }
+
+.TimelineItem:nth-child(odd) .TimelineText {
+    height: 100%;
+    transform: translate(20px, -20px);
+}
+.TimelineItem:nth-child(even) .TimelineText {
+    height: 100%;
+    transform: translate(20px, -10px);
+}
