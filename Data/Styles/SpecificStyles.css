@@ -53,12 +53,17 @@
 }
 
 /*Donate Stuff*/
-.donatetextwall {
-    margin-top: 200px;
+.DonationText {
+    position: absolute;
+    top: 500px;
 }
-.donatestuff {
+.Donations {
+    position: absolute;
     text-align: center;
-    margin-top: 150px;
+    top: 750px
+}
+.ButtonContainer {
+    display: flex;
 }
 
 /*Timeline*/
