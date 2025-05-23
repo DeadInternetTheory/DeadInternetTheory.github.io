@@ -1,19 +1,15 @@
-const viewportHeight = window.innerHeight;
-const scrollY = window.scrollY;
-const { top, height } = element.getBoundingClientRect();
-
-const bottom = top + height;
-const viewportCenter = viewportHeight / 2;
-const scrollCenterPosition = scrollY + viewportCenter;
-const elementTopAbsolutePosition = top + scrollY;
-const elementBottomAbsolutePosition = bottom + scrollY;
-
-const bodyProximityToCenter = (
-    Math.min(scrollCenterPosition, elementTopAbsolutePosition) / elementTopAbsolutePosition
-) / (
-        Math.max(scrollCenterPosition, elementBottomAbsolutePosition) / elementBottomAbsolutePosition
-    );
-
-console.table([
-    ["bodyProximityToCenter", bodyProximityToCenter]
-]);
+document.addEventListener("DOMContentLoaded", () => {
+	const viewEvent = new Event('InViewEvent');
+	const observer = new IntersectionObserver(entries => {
+		entries.forEach(entry => {
+			if (entry.isIntersecting) {
+				if (!entry.target.classList.contains('InView')) {
+					entry.target.dispatchEvent(viewEvent);
+					entry.target.classList.add('InView');
+				}
+			}
+		});
+	});
+	const allAnimatedElements = document.querySelectorAll('.DetectInView');
+	allAnimatedElements.forEach((element) => observer.observe(element));
+}); 
