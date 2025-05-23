@@ -24,12 +24,18 @@ html {
     font-size: 1rem;
     scroll-behavior: smooth;
     overflow: scroll;
-    overflow-x: scroll;
+    overflow-x: hidden;
     -webkit-touch-callout: none;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+    animation: 700ms startColourFadeAnim 100ms linear forwards;
+}
+@keyframes startColourFadeAnim{
+    to {
+        background-color: var(--black);
+    }
 }
 
 /*TODO: create mouse-tracking radial gradient*/
@@ -70,6 +76,7 @@ a {
 
 header {
     position: fixed;
+    z-index: 999999999999999;
     top: 0px;
     width: 100vw;
     display: flex;
@@ -79,9 +86,11 @@ header {
 }
 
 /*canvas is used for drawing vector graphics*/
-canvas{
+canvas {
     z-index: -1;
     position: absolute;
+    background: radial-gradient(130% 107.13% at 50% 10%, transparent 40%, var(--primary) 70%, var(--white) 100%);
+    box-shadow: 0px 0px 20px 0px var(--white);
 }
 
 /*A section is used to cover the whole screen*/
@@ -90,6 +99,7 @@ section {
     width: 100vw;
     text-align: center;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
@@ -114,10 +124,33 @@ article {
 
 h1 {
     transform: translate(0%, -12.5%);
-    text-shadow: /*put glow here*/;
     display: inline;
     font-size: 10rem;
-    background: radial-gradient(140% 107.13% at 50% 10%, var(--accent) 37.41%,#63e 69.27%,#fff 100%);
+    background: radial-gradient(140% 90% at 50% 10%, var(--primary) 30%, var(--accent) 60%, var(--white) 100%);
+    background-clip: text;
+    text-shadow: 0px 0px 32px rgba(255, 255, 255, 0.3), 0px 0px 32px rgba(0, 0, 0, 0.1);
+    color: transparent;
+}
+h3 {
+    font-size: 8rem;
+    background: radial-gradient(140% 90% at 50% 10%, var(--primary) 30%, var(--accent) 60%, var(--white) 100%);
     background-clip: text;
     color: transparent;
+}
+h3 {
+    font-size: 6rem;
+    background: radial-gradient(140% 90% at 50% 10%, var(--primary) 30%, var(--accent) 60%, var(--white) 100%);
+    background-clip: text;
+    color: transparent;
+}
+h4 {
+    font-size: 4rem;
+    background: radial-gradient(140% 90% at 50% 10%, var(--primary) 30%, var(--accent) 60%, var(--white) 100%);
+    background-clip: text;
+    color: transparent;
+}
+/*Not actually used for headers*/
+h5 {
+    font-size: 2rem;
+    margin: 0px 300px;
 }

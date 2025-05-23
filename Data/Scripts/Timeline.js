@@ -1,4 +1,4 @@
-const track = document.getElementById("TimelineItem-track");
+const track = document.getElementById("timeline");
 
 const handleOnDown = e => track.dataset.mouseDownAt = e.clientX;
 
@@ -10,8 +10,8 @@ const handleOnUp = () => {
 const handleOnMove = e => {
     if (track.dataset.mouseDownAt === "0") return;
 
-    const mouseDelta = parseFloat(track.dataset.mouseDownAt) - e.clientX,
-        maxDelta = window.innerWidth / 2;
+    const mouseDelta = parseFloat(track.dataset.mouseDownAt) - e.clientX;
+    const maxDelta = window.innerWidth / 2;
 
     const percentage = (mouseDelta / maxDelta) * -100,
         nextPercentageUnconstrained = parseFloat(track.dataset.prevPercentage) + percentage,
@@ -21,13 +21,7 @@ const handleOnMove = e => {
 
     track.animate({
         transform: `translate(${nextPercentage}%, -50%)`
-    }, { duration: 1200, fill: "forwards" });
-
-    for (const image of track.getElementsByClassName("TimelineItem")) {
-        image.animate({
-            objectPosition: `${100 + nextPercentage}% center`
-        }, { duration: 1200, fill: "forwards" });
-    }
+    }, { duration: 2000, fill: "forwards" });
 }
 
 /* -- Had to add extra lines for touch events -- */
