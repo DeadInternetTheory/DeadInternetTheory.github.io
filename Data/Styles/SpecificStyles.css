@@ -46,10 +46,10 @@
 }
 
 /*Index parallax*/
-.graveyardArt{
+.graveyardArt {
     z-index: -1;
-    position:absolute;
-    bottom:0px;
+    position: absolute;
+    top: 310vh;
 }
 
 /*Donate Stuff*/
@@ -76,7 +76,6 @@
     left: 10%;
     top: 50%;
     transform: translate(0%, -50%);
-    user-select: none; /* -- Prevent image highlighting -- */
 }
     .TimelineItem-track::before {
         position: absolute;
@@ -84,7 +83,7 @@
         background-color: white;
         top: 50%;
         height: 20px;
-        width: 87.625%;
+        width: 100%;
         top: 50%;   
         transform: translate(0%, -50%);
     }
@@ -109,5 +108,5 @@
 }
 .TimelineItem:nth-child(even) .TimelineText {
     height: 100%;
-    transform: translate(20px, -10px);
+    transform: translate(20px, 10px);
 }

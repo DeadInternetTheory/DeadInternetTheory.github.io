@@ -24,6 +24,7 @@ html {
     font-size: 1rem;
     scroll-behavior: smooth;
     overflow: scroll;
+    overflow-x: hidden;
     -webkit-touch-callout: none;
     -webkit-user-select: none;
     -moz-user-select: none;
@@ -129,4 +130,9 @@ h3 {
     background: radial-gradient(140% 90% at 50% 10%, var(--primary) 30%, var(--accent) 60%, var(--white) 100%);
     background-clip: text;
     color: transparent;
+}
+/*Not actually used for headers*/
+h5 {
+    font-size: 2rem;
+    margin: 0px 300px;
 }
