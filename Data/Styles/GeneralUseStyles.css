@@ -56,8 +56,10 @@
 
 /*Graphics*/
 .logo {
-   height: 50px; 
-   margin-right: 10px;
+    height: 50px;
+    margin-right: 10px;
+    margin-left: 4px;
+    transform: translate(0px, 3px);
 }
 
 .bubble {

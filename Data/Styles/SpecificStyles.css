@@ -62,13 +62,6 @@
 }
 
 /*Timeline*/
-.TimelineBody {
-    height: 100vh;
-    width: 100vw;
-    background-color: white;
-    margin: 0rem;
-    overflow: hidden;
-}
 .TimelineItem-track {
     display: flex;
     gap: 200vmin;
@@ -77,23 +70,43 @@
     top: 50%;
     transform: translate(0%, -50%);
 }
-    .TimelineItem-track::before {
+    .TimelineItem-track::after {
         position: absolute;
         content: '';
-        background-color: white;
+        background-color: var(--white);
         top: 50%;
-        height: 20px;
+        height: 15px;
         width: 100%;
-        top: 50%;   
+        transform: translate(0%, -50%);
+        border-radius: 0px 0px 15px 15px;
+    }
+    .TimelineItem-track::before {
+        z-index: -1;
+        filter: blur(20px) brightness(0.6);
+        position: absolute;
+        content: '';
+        background-color: var(--white);
+        top: 50%;
+        height: 15px;
+        width: 100%;
         transform: translate(0%, -50%);
     }
-    .TimelineItem-track > .TimelineItem {
-        width: 2vmin;
-        height: 30vmin;
-        object-fit: cover;
-        object-position: 100% center;
-        border: none;
-        background-color: white;
+
+.TimelineItem {
+    width: 10px;
+    height: 30vh;
+    border-radius: 10px;
+    background-color: var(--white);
+}
+    .TimelineItem::before {
+        content: '';
+        z-index: -1;
+        position: absolute;
+        filter: blur(20px) brightness(0.5);
+        width: 10px;
+        height: 30vh;
+        border-radius: 10px;
+        background-color: var(--white);
     }
     .TimelineItem:nth-child(odd) {
         transform: translate(0%, -50%);
@@ -102,11 +115,12 @@
         transform: translate(0%, 50%);
     }
 
-.TimelineItem:nth-child(odd) .TimelineText {
+.TimelineText {
     height: 100%;
-    transform: translate(20px, -20px);
 }
-.TimelineItem:nth-child(even) .TimelineText {
-    height: 100%;
-    transform: translate(20px, 10px);
-}
+    .TimelineItem:nth-child(odd) .TimelineText {
+        transform: translate(20px, -20px);
+    }
+    .TimelineItem:nth-child(even) .TimelineText {
+        transform: translate(20px, 10px);
+    }

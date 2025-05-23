@@ -30,6 +30,12 @@ html {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+    animation: 700ms startColourFadeAnim 100ms linear forwards;
+}
+@keyframes startColourFadeAnim{
+    to {
+        background-color: var(--black);
+    }
 }
 
 /*TODO: create mouse-tracking radial gradient*/
@@ -126,7 +132,19 @@ h1 {
     color: transparent;
 }
 h3 {
-    font-size: 7rem;
+    font-size: 8rem;
+    background: radial-gradient(140% 90% at 50% 10%, var(--primary) 30%, var(--accent) 60%, var(--white) 100%);
+    background-clip: text;
+    color: transparent;
+}
+h3 {
+    font-size: 6rem;
+    background: radial-gradient(140% 90% at 50% 10%, var(--primary) 30%, var(--accent) 60%, var(--white) 100%);
+    background-clip: text;
+    color: transparent;
+}
+h4 {
+    font-size: 4rem;
     background: radial-gradient(140% 90% at 50% 10%, var(--primary) 30%, var(--accent) 60%, var(--white) 100%);
     background-clip: text;
     color: transparent;

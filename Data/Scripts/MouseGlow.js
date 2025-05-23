@@ -5,5 +5,5 @@ document.body.onpointermove = event => {
     follow.animate({
         left: `${clientX}px`,
         top: `${clientY}px`
-    }, { duration: 1000, fill: "forwards" })
+    }, { duration: 700, fill: "forwards" })
 }
