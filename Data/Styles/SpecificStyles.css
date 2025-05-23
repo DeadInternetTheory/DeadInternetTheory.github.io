@@ -104,3 +104,83 @@
     height: 100%;
     transform: translate(20px, -10px);
 }
+
+/*State of the internet*/
+@property --angle {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+
+@property --angle1 {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+
+.AnimatedPieChart {
+    position: absolute;
+    --angle: 0deg;
+    width: 500px;
+    height: 500px;
+    background: conic-gradient(red 180deg, orange 180deg 360deg);
+    border-radius: 50%;
+    animation: rotate 3000ms ease-in-out forwards;
+}
+
+    .AnimatedPieChart::before {
+        position: absolute;
+        content: '';
+        --angle: 0deg;
+        z-index: -1;
+        width: 500px;
+        height: 500px;
+        background: conic-gradient(var(--dark) 180deg, var(--light) 180deg 360deg);
+        border-radius: 50%;
+        animation: rotate 3000ms ease-in-out forwards;
+        filter: blur(20px);
+        transform: translate(-50%, 0%);
+    }
+
+@keyframes rotate {
+    0% {
+        background: conic-gradient(var(--accent) var(--angle), var(--primary) 0deg var(--angle1), transparent 0deg);
+        --angle: 0deg;
+        --angle1: 0deg
+    }
+
+    100% {
+        background: conic-gradient(var(--accent) var(--angle), var(--primary) 0deg var(--angle1), transparent 180deg 360deg);
+        --angle: 187.2deg;
+        --angle1: 360deg;
+    }
+}
+
+.AnimatedTextRight {
+    position: absolute;
+    top: 60%;
+    right: -50%;
+    opacity: 0;
+    animation: TextRight 3000ms forwards;
+}
+@keyframes TextRight {
+    to {       
+       opacity: 1;
+       top: 45%;
+       right: 10%;
+    }
+}
+.AnimatedTextLeft {
+    position: absolute;
+    bottom: 60%;
+    left: -50%;
+    opacity: 0;
+    animation: TextLeft 3000ms forwards;
+}
+@keyframes TextLeft {
+    to {
+        opacity: 1;
+        bottom: 45%;
+        left: 10%;
+    }
+}
