@@ -113,3 +113,8 @@
     z-index: 1;
     position: fixed;
 }
+
+.Card {
+    border-radius: 6px;
+    box-shadow: 0px 0px 50px 0px var(--white);
+}
