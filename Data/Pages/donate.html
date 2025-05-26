@@ -8,7 +8,9 @@
     <link rel="stylesheet" href="../Styles/SpecificStyles.css" />
 </head>
 <body>
+    <div id="FollowMouse"></div>
     <div id="top"></div>
+
     <header>
         <div class="headerArea">
             <a href="../../index.html"><img src="../Images/logo.png" class="logo" /></a>
@@ -16,7 +18,7 @@
                 <a class="button" href="../Pages/timeline.html">timeline</a>
                 <a class="button" href="../Pages/state.html">state of the internet</a>
                 <a class="button" href="../Pages/news.html">recent news</a>
-                <a class="button" href="../Pages/donate.html">donate</a>
+                <a class="button" href="#top">donate</a>
             </div>
         </div>
     </header>
@@ -26,10 +28,20 @@
         <div class="Card DetectInView FadeOnView" style="width:288px; height:243px;"><stripe-buy-button buy-button-id="buy_btn_1RSYcqDyUNM0k159BNK6Spq2" publishable-key="pk_live_opxWxwEn5G3jeZHE28e0MW87"> </stripe-buy-button></div>
     </section>
     <section>
-        <h3 class="Obfuscate DetectInView FadeOnView">Leaderboard goes here</h3>
+        <h3 class="Obfuscate DetectInView FadeOnView">Donation Leaderboard</h3>
+        <div class="leaderboardContainer DetectInView FadeOnView">
+            <div class="leaderboardLine" style="width: 99%;"><img src="#" class="leaderboardLineIcon DetectInView FadeOnView" /><div class="leaderboardRow DetectInView"><p class="leaderboardText">Mr Feast<br>$10001</p></div></div>
+            <div class="leaderboardLine" style="width: 98%;"><img src="#" class="leaderboardLineIcon DetectInView FadeOnView" /><div class="leaderboardRow DetectInView"><p class="leaderboardText">Gill Bates<br>$10000</p></div></div>
+            <div class="leaderboardLine" style="width: 48%;"><img src="#" class="leaderboardLineIcon DetectInView FadeOnView" /><div class="leaderboardRow DetectInView"><p class="leaderboardText">Beff Jezos<br>$4800</p></div></div>
+            <div class="leaderboardLine" style="width: 40%;"><img src="#" class="leaderboardLineIcon DetectInView FadeOnView" /><div class="leaderboardRow DetectInView"><p class="leaderboardText">Jeve Stobs<br>$4000</p></div></div>
+            <div class="leaderboardLine" style="width: 37%;"><img src="#" class="leaderboardLineIcon DetectInView FadeOnView" /><div class="leaderboardRow DetectInView"><p class="leaderboardText">Rick Sanchez<br>$3500</p></div></div>
+            <div class="leaderboardLine" style="width: 18%;"><img src="#" class="leaderboardLineIcon DetectInView FadeOnView" /><div class="leaderboardRow DetectInView"><p class="leaderboardText">Local KFC worker<br>$1000</p></div></div>
+            <div class="leaderboardLine" style="width: 7.5%;"><img src="#" class="leaderboardLineIcon DetectInView FadeOnView" /><div class="leaderboardRow DetectInView"><p class="leaderboardText">Rat<br>$2</p></div></div>
+        </div>
     </section>
-    <section>
+    <section style="margin-top: 50vh; margin-bottom: 5vh;">
         <h3 class="Obfuscate DetectInView FadeOnView">About the non-for-profit</h3>
+        <h5 class="DetectInView FadeOnView">Our non-for-profit group aims to get our world leaders and officials to strive to control artificial intelligience and bots in the internet. We hope to get more restrictive measures and policies on our beloved websites and social medias to make sure that the content we read, react, and interact with are authentic, human-made content and real communication. When you donate to us we will use your funds to help our effort in getting our message heard by the big organisations who run the websites, and the nations which social media is hosted upon.</h5>
     </section>
 
     <script async src="https://js.stripe.com/v3/buy-button.js"></script>

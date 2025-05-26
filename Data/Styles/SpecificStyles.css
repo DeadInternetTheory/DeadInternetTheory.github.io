@@ -45,21 +45,51 @@
     }
 }
 
-/*Index parallax*/
+/*Index*/
 .graveyardArt {
     z-index: -1;
     position: absolute;
     top: 310vh;
 }
 
-/*Donate Stuff*/
-.donatetextwall {
-    margin-top: 200px;
+/*Donate Page*/
+.leaderboardContainer{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 80vw;
 }
-.donatestuff {
-    text-align: center;
-    margin-top: 150px;
+.leaderboardLine {
+    float: left;
+    height: 50px;
 }
+.leaderboardLineIcon {
+    height:100%;
+    width:50px;
+    float: right;
+}
+.leaderboardText {
+    margin-top: 0px;
+    margin-right:5px;
+    height: 100%;
+    float: right;
+}
+.leaderboardRow {
+    float: left;
+    height: 100%;
+    width: 0px;
+    border-radius: 5px;
+    background-color: transparent;
+    background: linear-gradient(to right, var(--primary), var(--accent));
+}
+    .leaderboardRow.InView {
+        animation: leaderboardRowGrowAnim 2000ms ease-in-out forwards;
+    }
+    @keyframes leaderboardRowGrowAnim{
+        to {
+            width: calc(100% - 55px);
+        }
+    }
 
 /*Timeline*/
 .TimelineItem-track {
