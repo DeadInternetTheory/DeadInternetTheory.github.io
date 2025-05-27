@@ -13,10 +13,6 @@
     --animation-speed: 0.35s;
 }
 
-::-webkit-scrollbar {
-    width: 0;
-}
-
 html {
     background-color: rgb(0,0,0);
     color: var(--white);
@@ -37,8 +33,10 @@ html {
         background-color: var(--black);
     }
 }
+html::-webkit-scrollbar {
+    width: 0;
+}
 
-/*TODO: create mouse-tracking radial gradient*/
 body {
     margin: 0;
     background-color: var(--black);
@@ -56,8 +54,12 @@ body {
 a {
     color: var(--accent);
     text-decoration: none;
+    transition: 0.3s ease-in-out;
+    text-shadow: 0px 0px 16px transparent;
 }
-/*Positioning doesn't work at all but still looks look :thumbs-up:*/
+    a:hover {
+        text-shadow: 0px 0px 16px rgb(142 100 255);
+    }
     a::before {
         content: "";
         position: absolute;
@@ -107,13 +109,23 @@ section {
 article {
     width: 90vw;
     height: 90vh;
-    margin: 5vh 5vw 5vh 5vw;
+    margin: 15vh 5vw 15vh 5vw;
     background-color: var(--blur);
     border-radius: 20px;
     display: flex;
     flex-direction: row;
     box-shadow: 0px 0px 50px 0px var(--white);
 }
+    article > div::-webkit-scrollbar{
+        background-color: var(--dark);
+        width:10px;
+    }
+    article > div::-webkit-scrollbar-thumb {
+        background-color: transparent;
+        background: radial-gradient(140% 90% at 50% 10%, var(--primary) 30%, var(--accent) 60%, var(--white) 100%);
+        border-radius: 100px;
+    }
+
 
 h1 {
     transform: translate(0%, -12.5%);
@@ -146,4 +158,11 @@ h4 {
 h5 {
     font-size: 2rem;
     margin: 0px 300px;
+}
+h6 {
+    font-size: 1.5rem;
+    margin: 0px 200px;
+}
+article > div > p {
+    font-size: 1.3rem;
 }
