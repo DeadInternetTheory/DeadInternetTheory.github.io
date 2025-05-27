@@ -105,22 +105,15 @@ section {
 }
 
 article {
-    width: 100%;
-    background-color: var(--light);
+    width: 90vw;
+    height: 90vh;
+    margin: 5vh 5vw 5vh 5vw;
+    background-color: var(--blur);
     border-radius: 20px;
     display: flex;
+    flex-direction: row;
+    box-shadow: 0px 0px 50px 0px var(--white);
 }
-    article p {
-        position: sticky;
-        left: 16%;
-        text-align: justify;
-        text-justify: inter-word;
-        margin-right: 10%;
-    }
-    article hr {
-        position: sticky;
-        left: 15%;
-    }
 
 h1 {
     transform: translate(0%, -12.5%);

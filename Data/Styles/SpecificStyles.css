@@ -63,9 +63,12 @@
     float: left;
     height: 50px;
 }
+    .leaderboardLine img{
+        border-radius: 5px;
+    }
 .leaderboardLineIcon {
-    height:100%;
-    width:50px;
+    height: 100%;
+    width: 50px;
     float: right;
 }
 .leaderboardText {
